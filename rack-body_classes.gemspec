@@ -12,7 +12,7 @@ Gem::Specification.new do |gem|
   gem.email         = ['eric@xentek.net']
   gem.description   = %q{Decorate your <body> with CSS Classes indicating platform, browser, browser version, and more.}
   gem.summary       = %q{Decorate your <body> with CSS Classes}
-  gem.homepage      = ''
+  gem.homepage      = 'https://github.com/xentek/rack-body_classes'
   gem.license       = 'MIT'
 
   gem.files         = `git ls-files`.split($/)
