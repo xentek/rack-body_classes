@@ -1,4 +1,12 @@
 source 'https://rubygems.org'
-
-# Specify your gem's dependencies in body_classes.gemspec
 gemspec
+
+
+group :test do
+  gem 'sinatra', require: false
+  gem 'minitest', require: false
+  gem 'minitest-spec-context', require: false
+  gem 'minitest-reporters', require: false
+  gem 'mocha', require: false
+  gem 'rack-test', require: false
+end
