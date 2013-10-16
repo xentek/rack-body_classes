@@ -39,7 +39,6 @@ Here's a trivial layout file, formatted with the `slim` templating engine, to gi
       head
       body class="#{env['rack.body_classes']}"
         == yield
-
     
 ## Contributing
 
@@ -48,3 +47,7 @@ Here's a trivial layout file, formatted with the `slim` templating engine, to gi
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+## Shout Outs
+
+This middleware is made possible by `Browser` [gem](https://github.com/fnando/browser) and `Mobvious` [gem](https://github.com/jistr/mobvious).
