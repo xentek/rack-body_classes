@@ -6,7 +6,7 @@ Decorate your `<body>` with CSS Classes indicating platform, browser, browser ve
 
 - Build: [![Build Status](https://secure.travis-ci.org/xentek/rack-body_classes.png)](http://travis-ci.org/xentek/rack-body_classes)
 - Dependencies: [![Dependency Status](https://gemnasium.com/xentek/rack-body_classes.png)](https://gemnasium.com/xentek/rack-body_classes)
-- Code Quality: [![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/xentek/rack-body_classes)
+- Code Quality: [![Code Climate](https://d3s6mut3hikguw.cloudfront.net/github/xentek/rack-body_classes.png)](https://codeclimate.com/github/xentek/rack-body_classes)
 
 ## Installation
 
