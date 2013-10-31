@@ -22,6 +22,7 @@ module Rack
     private
 
     def mobile_esp(user_agent, http_accept)
+      return 'unknown-device' if user_agent.nil? || http_accept.nil?
       mobileesp = MobileESPConverted::UserAgentInfo.new(user_agent, http_accept)
       return :mobile if mobileesp.is_tier_generic_mobile || mobileesp.is_tier_iphone || mobileesp.is_tier_rich_css
       return :tablet if mobileesp.is_tier_tablet

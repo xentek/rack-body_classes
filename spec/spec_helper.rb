@@ -20,7 +20,6 @@ include Rack::Test::Methods
 require 'sinatra/base'
 class App < Sinatra::Base
   use Rack::BodyClasses
-  enable :logging
 
   get '/' do
     %Q{<html><head></head><body class="#{env['rack.body_classes']}"></body></html>}
