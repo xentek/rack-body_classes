@@ -22,7 +22,7 @@ Gem::Specification.new do |gem|
 
   gem.add_dependency 'rack'
   gem.add_dependency 'browser'
-  gem.add_dependency 'mobvious'
+  gem.add_dependency 'mobileesp_converted'
 
   gem.add_development_dependency 'bundler', '~> 1.3'
   gem.add_development_dependency 'rake'

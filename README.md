@@ -39,7 +39,11 @@ Here's a trivial layout file, formatted with the `slim` templating engine, to gi
       head
       body class="#{env['rack.body_classes']}"
         == yield
-    
+
+When rendered, the body tag will look something like this:
+
+    <body class="desktop chrome modern mac webkit">
+
 ## Contributing
 
 1. Fork it
@@ -50,4 +54,4 @@ Here's a trivial layout file, formatted with the `slim` templating engine, to gi
 
 ## Shout Outs
 
-This middleware is made possible by `Browser` [gem](https://github.com/fnando/browser) and `Mobvious` [gem](https://github.com/jistr/mobvious).
+This middleware is made possible by `Browser` [gem](https://github.com/fnando/browser) and `MobileESP (converted)` [gem](https://github.com/jistr/mobileesp_converted) and borrows a bit of code from `Mobvious` [gem](https://github.com/jistr/mobvious). Mad props and many thank yous to these gem authors.

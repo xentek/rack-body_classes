@@ -2,26 +2,30 @@
 
 require 'rack'
 require 'browser'
-require 'mobvious'
+require 'mobileesp_converted'
 require 'rack/body_classes/version'
-
-Mobvious.configure do |config|
-  config.strategies = [ Mobvious::Strategies::MobileESP.new(:mobile_tablet_desktop) ]
-end
 
 module Rack
   class BodyClasses
     def initialize(app)
       @app = app
-      @mobvious = Mobvious::Manager.new(app)
     end
 
     def call(env)
-      @mobvious.call(env)
-      browser = Browser.new(ua: env["HTTP_USER_AGENT"], accept_language: env['HTTP_ACCEPT_LANGUAGE'])
-      env['rack.body_classes'] = [env['mobvious.device_type'], browser.meta].flatten.compact.join(" ")
+      browser = Browser.new(ua: env["HTTP_USER_AGENT"], accept_language: env['HTTP_ACCEPT_LANGUAGE']).meta
+      device = mobile_esp(env["HTTP_USER_AGENT"], env['HTTP_ACCEPT'])
+      env['rack.body_classes'] = [device, browser].flatten.compact.join(" ")
       status, headers, body = @app.call(env)
       [status, headers, body]
     end
+
+    private
+
+    def mobile_esp(user_agent, http_accept)
+      mobileesp = MobileESPConverted::UserAgentInfo.new(user_agent, http_accept)
+      return :mobile if mobileesp.is_tier_generic_mobile || mobileesp.is_tier_iphone || mobileesp.is_tier_rich_css
+      return :tablet if mobileesp.is_tier_tablet
+      return :desktop
+    end      
   end
 end
